@@ -1,0 +1,15 @@
+maanden = [ 'jan', 'feb', 'mrt', 'mei']
+
+print(maanden)
+maanden.insert(3, 'apr')
+print(maanden)
+maanden.append('jun')
+print(maanden)
+maanden.pop()
+print(maanden)
+maanden.remove(maanden[1])
+print(maanden)
+maanden.reverse()
+print(maanden)
+maanden.sort()
+print(maanden)
