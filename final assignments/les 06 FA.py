@@ -1,7 +1,7 @@
 def toon_aantal_kluizen_vrij(): #deze functie geeft weer hoeveel kluizen er nog beschikbaar zijn
     infile = open('kluizen.txt')
     lst = infile.readlines()
-    aantalbezet = len(lst)
+    aantalbezet = len(lst) #berkent hoeveel regels er in het document staan en dus hoeveel kluizen er bezet zijn
     over = 12 - aantalbezet
     infile.close()
     print("er zijn nog {} kluizen beschikbaar\n".format(over))
@@ -17,13 +17,12 @@ def nieuwe_kluis(): #maakt een nieuwe kluis aan
             lst.remove(kluisnr) #haalt de kluisnummers die in de text file staan uit de lijst
 
     if len(lst) != 0: #controleert of er nog kluizen vrij zijn
-        outfile = open('kluizen.txt', 'r+')
-        outfile.read()
+        outfile = open('kluizen.txt', 'a')
         code = input("geef een code op(min 4 tekens lang): ")
         if len(code) >= 4: # controleert of de code langer is dan 4
             outfile.write('{};{}\n'.format(lst[0],code))
             print('u heeft kluisnummer: {}\n'.format(lst[0]))
-        else:
+        else: #wanneer de gebruiker een te korte kode invoert wordt onderstaande melding geprint
             print("u heeft een te korte code ingevoerd probeer het nogmaals\n")
         outfile.close()
     else: #als er geen kluizen vrij zijn geeft dit een melding
@@ -98,4 +97,4 @@ while doorgaan == 1: # zorgt ervoor dat het programma blijft draaien
         elif menukeuze == 5:
             break # stopt het programma
         else: # als het geen 1,2,3,4 of 5 is maar bijvoorbeeld 123 wordt er ook een foutmelding gegeven
-            print("u heeft geen geldige invoer ingegeven")
+            print("u heeft geen geldige invoer ingegeven\n")

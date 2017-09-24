@@ -2,28 +2,23 @@ def standaardtarief (afstandKM):#deze functie berekent het standaard bedrag aan 
     bedrag = 0.0
     if afstandKM>50: #afstand groter dan 50KM
         bedrag = afstandKM *0.60 +15
-        return (bedrag)
     elif afstandKM>0: #afstand tussen 0 en 50KM
         bedrag= afstandKM*0.80
-        return (bedrag)
     else:#bij negatieve afstanden wordt er 0 teruggegeven
         bedrag= 0
-        return (bedrag)
+    return (bedrag)
 
 def ritprijs(leeftijd,weekendrit,afstandKM): #deze functie berkent de korting
     prijs = standaardtarief(afstandKM)
     if (leeftijd < 12 or leeftijd >= 65) and weekendrit == False: #dit is de werkdagen voor ouderen en kinderen
         kortingsprijs = prijs - (prijs/100 *30)
-        return (round(kortingsprijs, 2))
     elif (leeftijd < 12 or leeftijd >= 65) and weekendrit == True: #dit is het weekendtarief voor ouderen en kinderen
         kortingsprijs = prijs - (prijs / 100 * 35)
-        return (round(kortingsprijs, 2))
     elif (leeftijd >= 12 or leeftijd < 65) and weekendrit == True: #andere leeftijdsgroepen in het weekend
         kortingsprijs = prijs - (prijs / 100 * 40)
-        return (round(kortingsprijs, 2))
     else: #dit zijn de andere leeftijdsgroepen doordeweeks
         kortingsprijs=prijs
-        return(round(kortingsprijs,))
+    return(round(kortingsprijs,2))
 
 def test(): #hiermee kan de gebruiker kiezen of hij/zij een aantal testwardes wil gebruiken of zelf iets in wil voeren
     test = input('wil u gebruik maken van de ingebouwde testfunctie?(ja/nee): ')
@@ -40,7 +35,6 @@ def test(): #hiermee kan de gebruiker kiezen of hij/zij een aantal testwardes wi
         print(ritprijs(64, True, 10))   #overig weekend (uitkomst is 4.8)
         print(ritprijs(65, True, 10))   #ouderen weekend(uitkomst is 5.2 )
 
-
         #positieve afstanden >50km
         print('positieve afstanden >50km:')
         print(ritprijs(64, False, 60))     #afstand groter dan 50km dus 15€+60*0.6 (uitkoms is 51)
@@ -52,7 +46,6 @@ def test(): #hiermee kan de gebruiker kiezen of hij/zij een aantal testwardes wi
         print(ritprijs(64, True, 60))      #afstand groter dan 50km overig in het weekend(uitkomst is 30.6)
         print(ritprijs(65, True, 60))      #afstand groter dan 50km voor ouderen in het weekend (uitkomst is 33.15)
 
-
         #negatieve afstanden:
         print('negatieve afstanden: ')
         print(ritprijs(64, False, -10))   #negatieve afstand overig (uitkomst is 0)
@@ -63,9 +56,6 @@ def test(): #hiermee kan de gebruiker kiezen of hij/zij een aantal testwardes wi
         print(ritprijs(12, True, -10))    #negatieve afstand overig in het weekend(uitomst is0)
         print(ritprijs(64, True, -10))    #negatieve afstand overig in het weekend (uitkomst is 0)
         print(ritprijs(65, True, -10))    #negatieve afstand ouderen in heet weekend (uitkomst is 0)
-
-
-
 
     else:
         # dit is de input variant
@@ -80,6 +70,6 @@ def test(): #hiermee kan de gebruiker kiezen of hij/zij een aantal testwardes wi
         else:
             print("u heeft geen geldige waarde ingevuld bij weekendrit")
 
-        print('de ingevoerde rit kost', ritprijs(leeftijd, weekendrit, afstandKM))
+        print('de ingevoerde rit kost', ritprijs(leeftijd, weekendrit, afstandKM),'euro')
 
 test()
