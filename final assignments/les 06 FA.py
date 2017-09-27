@@ -95,6 +95,7 @@ while doorgaan == 1: # zorgt ervoor dat het programma blijft draaien
         elif menukeuze == 4:
             kluis_teruggeven()
         elif menukeuze == 5:
-            break # stopt het programma
+            print('bedankt en tot ziens')
+            break #stopt het programma
         else: # als het geen 1,2,3,4 of 5 is maar bijvoorbeeld 123 wordt er ook een foutmelding gegeven
             print("u heeft geen geldige invoer ingegeven\n")
