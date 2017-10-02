@@ -3,8 +3,8 @@ def monopolyworp():
     import random
 
     while dubbel < 2:
-        steen1 = random.randrange(1, 6)
-        steen2 = random.randrange(1, 6)
+        steen1 = random.randrange(1, 7)
+        steen2 = random.randrange(1, 7)
         totaal = steen1 + steen2
         if steen1 == steen2:
             print('{} + {} = {} dubbel'.format(steen1,steen2,totaal))
@@ -14,5 +14,5 @@ def monopolyworp():
             break
     if dubbel == 2:
         print('{} + {} = direct naar de gevangenis'.format(steen1,steen2))
-
-monopolyworp()
+while True:
+    monopolyworp()
