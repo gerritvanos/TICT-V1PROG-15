@@ -20,7 +20,7 @@ def nieuwe_kluis(): #maakt een nieuwe kluis aan
         outfile = open('kluizen.txt', 'a')
         code = input("geef een code op(min 4 tekens lang): ")
         if len(code) >= 4: # controleert of de code langer is dan 4
-            outfile.write('{};{}\n'.format(lst[0],code))
+            outfile.write('\n{};{}'.format(lst[0],code))
             print('u heeft kluisnummer: {}\n'.format(lst[0]))
         else: #wanneer de gebruiker een te korte kode invoert wordt onderstaande melding geprint
             print("u heeft een te korte code ingevoerd probeer het nogmaals\n")

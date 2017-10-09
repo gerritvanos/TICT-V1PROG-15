@@ -2,7 +2,7 @@ import datetime
 import csv
 
 bestand = 'inloggers.csv'
-with open(bestand, 'w') as outfile:
+with open(bestand, 'w', newline='') as outfile:
     writer = csv.writer(outfile, delimiter = ';')
     while  True:
         naam = input("Wat is je achternaam? ")

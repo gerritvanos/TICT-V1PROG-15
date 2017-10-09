@@ -11,5 +11,5 @@ except(ZeroDivisionError):
     print('Delen door nul kan niet')
 except(ValueError):
     print('Gebruik cijfers voor het invoeren van het aantal')
-#except:
-    #print('onjuiste invoer')
+except:
+    print('onjuiste invoer')
